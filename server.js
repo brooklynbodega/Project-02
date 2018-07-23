@@ -25,7 +25,7 @@ const PORT = process.env.PORT || 4567;
 
 // Render the home page
 app.get('/', (request, response) => {
-    response.render('');
+    response.render('home/index');
 });
 
 // TEST: Render the page count for a user.
@@ -40,20 +40,20 @@ app.get('/', (request, response) => {
 //     );
 // });
 
-// Render the login page
-app.get('/login', (request, response) => {
-    response.render('login/index.ejs')
-    // add an object? { title: Login}
-});
+// // Render the login page
+// app.get('/login', (request, response) => {
+//     response.render('login/index.ejs')
+//     // add an object? { title: Login}
+// });
 
 // // 
 // app.post("/login", (request, response) => { });
 
-// Render the registration page
-app.get('/register', (request, response) => {
-    response.render('login/register.ejs')
-    // add an object? { title: Register}
-});
+// // Render the registration page
+// app.get('/register', (request, response) => {
+//     response.render('login/register.ejs')
+//     // add an object? { title: Register}
+// });
 
 // app.post("/register", (request, response) => { });
 
