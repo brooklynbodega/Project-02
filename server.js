@@ -25,7 +25,7 @@ const PORT = process.env.PORT || 4567;
 
 // Render the home page
 app.get('/', (request, response) => {
-    response.render('home/index.ejs');
+    response.render('');
 });
 
 // TEST: Render the page count for a user.

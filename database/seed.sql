@@ -1,5 +1,5 @@
 -- connect to databae
-\c volunteer_db
+\c volunteer02_db
 
 -- remove existing data before inserting new data
 DELETE FROM volunteers;

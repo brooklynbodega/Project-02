@@ -1,8 +1,8 @@
-DROP DATABASE volunteer_db;
+DROP DATABASE volunteer02_db;
 
-CREATE DATABASE volunteer_db;
+CREATE DATABASE volunteer02_db;
 
-\c volunteer_db;
+\c volunteer02_db;
 
 DROP TABLE IF EXISTS volunteers;
 DROP TABLE IF EXISTS projects;
