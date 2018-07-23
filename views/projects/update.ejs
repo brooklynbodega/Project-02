@@ -1,0 +1,35 @@
+<% include ../partials/header.ejs %>
+    <title>
+        Update
+        <%= project.project_name %>
+    </title>
+    </head>
+
+    <body>
+        <% include ../partials/navigation.ejs %>
+        <div class="page-btn-wrapper">
+            <a href="/"><button class="page-btn">Home Page</button></a>
+            <a href="/projects/"><button class="page-btn">Projects</button></a>
+            <a href="/volunteers/"><button class="page-btn">Volunteers</button></a>
+        </div>
+            <div class="project-wrapper">
+                <h2>
+                    <%= project.project_name %>
+                </h2>
+                <p>Description:
+                    <%= project.description %>
+                </p>
+
+                <h2>Update Project Information:</h2>
+                <form class="update-project" method="POST" action="/projects/<%= project.id %>?_method=PUT">
+
+                    <label>Project Name</label>
+                    <input type="text"  value="<%= project.project_name %>" name="project_name" placeholder="Enter Project Name"/>
+                    <br>
+                    <label>Description</label>
+                    <input type="text" value="<%= project.description %>" name="description" placeholder="Enter description" />
+                    <br>
+                    <button type="submit">Update</button>
+                </form>
+
+                <% include ../partials/footer.ejs %>

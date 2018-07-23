@@ -1,0 +1,30 @@
+<% include ../partials/header.ejs %>
+    <title>Volunteers</title>
+    </head>
+
+    <body>
+        <% include ../partials/navigation.ejs %>
+        <div class="page-btn-wrapper">
+        <a href="/"><button class="page-btn">Home Page</button></a>
+        <a href="/projects/"><button class="page-btn">Projects</button></a>
+        </div>
+        <br>
+        <div class="content-wrapper">
+        <a href="/volunteers/new">Create a New Volunteer Profile</a>
+        <br>
+        <h1>Volunteers</h1>
+        <% volunteers.forEach(volunteer => { %>
+            <div class="content-groups">
+                <a href="/volunteers/<%=volunteer.id%>">
+                <h2>
+                    <%= volunteer.fullname %></h2></a>
+                    <li> 
+                    Email:
+                    <a href="">
+                    <%= volunteer.email %>
+                    </a>
+                </li>
+            </div>
+            <% }) %>
+            </div>
+    <% include ../partials/footer.ejs %>

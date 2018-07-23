@@ -1,0 +1,28 @@
+<% include ../partials/header.ejs %>
+    <title>Projects</title>
+    </head>
+
+    <body>
+        <% include ../partials/navigation.ejs %>
+        <div class="page-btn-wrapper">
+        <a href="/"><button class="page-btn">Home Page</button></a>
+        <a href="/volunteers/"><button class="page-btn">Volunteers</button></a>
+        </div>
+        <br>
+        <div class="content-wrapper">
+            <a href="/projects/new">Create a New Volunteer Project</a>
+        <h1>Projects</h1>
+                <% projects.forEach(project => { %>
+                    <div class="content-groups">
+                        <a href="/projects/<%=project.id%>">
+                        <h2>                   
+                            <%= project.project_name %>
+                        </h2>
+                        </a>
+                        <p>Description:
+                            <%= project.description %>
+                        </p>
+                    </div>
+                    <% }) %>
+        </div>
+        <% include ../partials/footer.ejs %>

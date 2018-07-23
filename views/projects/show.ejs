@@ -1,0 +1,41 @@
+<% include ../partials/header.ejs %>
+    <title><%= project.project_name %></title>
+    </head>
+
+    <body>
+        <% include ../partials/navigation.ejs %>
+        <div class="page-btn-wrapper">
+        <a href="/"><button class="page-btn">Home Page</button></a>
+        <a href="/projects/"><button class="page-btn">Projects</button></a>
+        <a href="/volunteers/"><button class="page-btn">Volunteers</button></a>
+        </div>
+        <div class="content-wrapper">
+            <h2>
+                <%= project.project_name %>
+            </h2>
+            <p>Description:
+                <%= project.description %>
+            </p>
+
+        <a href="/projects/<%=project.id%>/signup"><button class="signup-btn">Sign Up</button></a>
+        </div>
+        <br>
+        <div class="content-groups">
+            <br>
+        <h3>Volunteer team:</h3>
+        <% volunteers.forEach(volunteer => { %>
+            <p>
+                <%= volunteer.fullname %>
+                <li><a href="<%= volunteer.email %>">Contact</a></li>
+            </p>
+        <% }) %>
+        </div>
+        <br>
+        <div class="edit-delete-btns">
+        <a href="/projects/<%= project.id %>/update"><button>Update Project</button></a>
+        <form action="/projects/<%= project.id %>?_method=DELETE" method="POST">
+            <label for="Delete Project"></label>
+            <button type="submit" name="delete-btn">Delete Project</button>
+        </form>
+        </div>
+        <% include ../partials/footer.ejs %>
