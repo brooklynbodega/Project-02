@@ -1,34 +1,27 @@
 <% include ../partials/header.ejs %>
-    <title>
-        Update <%= volunteer.fullname %>
-    </title>
-    </head>
+<title>
+    Update
+    <%= volunteer.fullname %>
+</title>
+<% include ../partials/navigation.ejs %>
+<div class="volunteer-wrapper">
+    <h2>
+        <%= volunteer.fullname %>
+    </h2>
+    <li>
+        <%= volunteer.email %>
+    </li>
+</div>
+<br>
+<h2>Update Volunteer Profile:</h2>
+<form class="update-volunteer" method="POST" action="/volunteers/<%= volunteer.id %>?_method=PUT">
 
-    <body>
-        <% include ../partials/navigation.ejs %>
-        <div class="page-btn-wrapper">
-            <a href="/"><button class="page-btn">Home Page</button></a>
-            <a href="/volunteers/"><button class="page-btn">Volunteers</button></a>
-            <a href="/projects/"><button class="page-btn">Projects</button></a>
-            </div>
-            <div class="volunteer-wrapper">
-                <h2>
-                    <%= volunteer.fullname %>
-                </h2>
-                <li>
-                    <%= volunteer.email %>
-                </li>
-            </div>
-            <br>
-            <h2>Update Volunteer Profile:</h2>
-            <form class="update-volunteer" method="POST" action="/volunteers/<%= volunteer.id %>?_method=PUT">
-            
-                <label>Edit Name</label>
-                <input type="text" value="<%= volunteer.fullname %>" name="fullname" placeholder="Edit Name"/>
-                <br>
-                <label>Edit Email</label>
-                <input type="text" value="<%= volunteer.email %>" name="email" placeholder="Edit Email"/>
-                <br>
-                <button type="submit">Update</button>
-            </form>
-            <% include ../partials/footer.ejs %>
+    <label>Edit Name</label>
+    <input type="text" value="<%= volunteer.fullname %>" name="fullname" placeholder="Edit Name" />
+    <br>
+    <label>Edit Email</label>
+    <input type="text" value="<%= volunteer.email %>" name="email" placeholder="Edit Email" />
+    <br>
+    <button type="submit">Update</button>
+</form>
+<% include ../partials/footer.ejs %>

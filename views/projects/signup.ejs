@@ -1,32 +1,20 @@
 <% include ../partials/header.ejs %>
-    <title>New Volunteer</title>
-    </head>
+<title>New Volunteer</title>
+<% include ../partials/navigation.ejs %>
 
-    <body>
+<h1>Sign Up for
+    <%= project.project_name %>
+</h1>
 
-        <% include ../partials/navigation.ejs %>
-            <div class="page-btn-wrapper">
-                <a href="/">
-                    <button class="page-btn">Home Page</button>
-                </a>
-                <a href="/volunteers/">
-                    <button class="page-btn">Volunteers</button>
-                </a>
-                <a href="/projects/">
-                    <button class="page-btn">Projects</button>
-                </a>
-            </div>
-            <h1>Sign Up for <%= project.project_name %></h1>
+<form action="/volunteers" method="POST">
 
-            <form action="/volunteers" method="POST">
+    <label>Volunteer Name</label>
+    <input type="text" name="fullname" placeholder="Enter Full Name" />
+    <br>
+    <label>E-mail</label>
+    <input type="text" name="email" placeholder="Enter e-mail" />
+    <br>
+    <button type="submit">Create</button>
+</form>
 
-                <label>Volunteer Name</label>
-                <input type="text" name="fullname" placeholder="Enter Full Name" />
-                <br>
-                <label>E-mail</label>
-                <input type="text" name="email" placeholder="Enter e-mail" />
-                <br>
-                <button type="submit">Create</button>
-            </form>
-
-            <% include ../partials/footer.ejs %>
+<% include ../partials/footer.ejs %>

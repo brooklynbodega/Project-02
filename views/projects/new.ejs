@@ -1,26 +1,16 @@
 <% include ../partials/header.ejs %>
-    <title>New Project</title>
-    </head>
+<title>New Project</title>
+<% include ../partials/navigation.ejs %>
+<h1>Create a New Project</h1>
 
-    <body>
+<form action="/projects" method="POST">
+    <label>Project Name</label>
+    <input type="text" name="project_name" placeholder="Enter Project Name" />
+    <br>
+    <label>Description</label>
+    <input type="text" name="description" placeholder="Enter description" />
+    <br>
+    <button type="submit">Create</button>
+</form>
 
-        <% include ../partials/navigation.ejs %>
-        <div class="page-btn-wrapper">
-            <a href="/"><button class="page-btn">Home Page</button></a>
-            <a href="/volunteers/"><button class="page-btn">Volunteers</button></a>
-            <a href="/projects/"><button class="page-btn">Projects</button></a>
-        </div>
-        <h1>Create a New Project</h1>
-
-        <form action="/projects" method="POST">
-
-            <label>Project Name</label>
-            <input type="text" name="project_name" placeholder="Enter Project Name" />
-            <br>
-            <label>Description</label>
-            <input type="text" name="description" placeholder="Enter description" />
-            <br>
-            <button type="submit">Create</button>
-        </form>
-
-        <% include ../partials/footer.ejs %>
+<% include ../partials/footer.ejs %>

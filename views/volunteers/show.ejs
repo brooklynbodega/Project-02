@@ -1,28 +1,23 @@
 <% include ../partials/header.ejs %>
-    <title><%= volunteer.fullname %></title>
-    </head>
+<title>
+    <%= volunteer.fullname %>
+</title>
+<% include ../partials/navigation.ejs %>
 
-    <body>
-        <% include ../partials/navigation.ejs %>
-        <div class="page-btn-wrapper">
-            <a href="/"><button class="page-btn">Home Page</button></a>
-            <a href="/volunteers/"><button class="page-btn">Volunteers</button></a>
-            <a href="/projects/"><button class="page-btn">Projects</button></a>
-            </div>
-        <div class="content-wrapper">
-            <h2>
-                <%= volunteer.fullname %>
-            </h2>
-            <li>
-                <%= volunteer.email %>
-            </li>
-        </div>
-        <br>
-    <div class="edit-delete-btns">
+<div class="content-wrapper">
+    <h2>
+        <%= volunteer.fullname %>
+    </h2>
+    <li>
+        <%= volunteer.email %>
+    </li>
+</div>
+<br>
+<div class="edit-delete-btns">
     <a href="/volunteers/<%= volunteer.id %>/update"><button>Update Profile</button></a>
     <form action="/volunteers/<%= volunteer.id %>?_method=DELETE" method="POST">
         <label for="Delete Profile"></label>
         <button type="submit" name="delete-btn">Delete Profile</button>
     </form>
-    </div>
-        <% include ../partials/footer.ejs %>
+</div>
+<% include ../partials/footer.ejs %>

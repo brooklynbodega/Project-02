@@ -11,9 +11,9 @@ DROP TABLE IF EXISTS project_group;
 CREATE TABLE volunteers (
     id SERIAL PRIMARY KEY,
     fullname TEXT NOT NULL,
-    email TEXT NOT NULL,
+    email TEXT NOT NULL
     -- username TEXT NOT NULL,
-    password_digest TEXT NOT NULL
+    -- password_digest TEXT NOT NULL
 );
 
 CREATE TABLE projects (
